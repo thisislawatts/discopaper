@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ldir="ltr" lang="en-US" class="no-js">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>DiscoPaper&trade;</title>
+
+	<style>
+
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		div {
+			height: 10vh;
+			background: no-repeat center center;
+			background-size: contain;
+			background-image: url('lamp.jpeg');
+		}
+
+		div:nth-child(2) {
+			height: 25vh;
+		}
+
+		div:nth-child(3) {
+			height: 65vh;
+		}
+
+		xbody:after {
+			content :"";
+			display: block;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 50%;
+			outline: 1px solid;
+		}
+
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="discopaper.js"></script>
+</body>
+</html>
