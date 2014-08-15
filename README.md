@@ -1,2 +1,2 @@
-discopaper
+Discopaper
 ==========
