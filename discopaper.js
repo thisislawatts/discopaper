@@ -129,7 +129,7 @@
 	/////////////////////
 
 	var mirrors = [];
-	var $d = $('div');
+	var $d = $('[data-discopaper]');
 
 	$d.each(function() {
 		mirrors.push( new DiscoPaper( $(this).get(0) ) );
