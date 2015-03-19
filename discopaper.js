@@ -10,7 +10,7 @@
 		_this.images = [];
 		_this.image = new Image();
 		_this.image.src = this.style.getPropertyValue('background-image').replace(new RegExp( /(url\(|\)|\")+/g ),'');
-		console.log(_this.image.src);
+                console.log( "Image Src:", _this.image.src);
 		/* Imagetimeout */
 		setTimeout(function() {
 			_this.setupSize();
@@ -42,7 +42,7 @@
 		
 		_this.getElementSize();
 		_this.background_size = _this.getBackgroundSize();
-		console.log(_this.background_size);
+                console.log(_this.background_size);
 
 		_this.$el.css({
 			overflow: 'hidden',
