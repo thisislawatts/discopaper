@@ -1,0 +1,26 @@
+{
+  "name": "discopaper",
+  "version": "1.0.0",
+  "description": "Adding a twist and shake to your repeating images",
+  "main": "discopaper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thisislawatts/discopaper.git"
+  },
+  "author": "Luke Watts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thisislawatts/discopaper/issues"
+  },
+  "homepage": "https://github.com/thisislawatts/discopaper",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-load-plugins": "^0.8.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-strip-debug": "^1.0.2",
+    "gulp-uglify": "^1.1.0"
+  }
+}
