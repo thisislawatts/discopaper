@@ -10,7 +10,7 @@
 		_this.images = [];
 		_this.image = new Image();
 		_this.image.src = this.style.getPropertyValue('background-image').replace(new RegExp( /(url\(|\)|\")+/g ),'');
-                console.log( "Image Src:", _this.image.src);
+		console.log( "Image Src:", _this.image.src);
 		/* Imagetimeout */
 		setTimeout(function() {
 			_this.setupSize();
@@ -58,30 +58,25 @@
 
 		for ( var i = 0; i < image_counter; i++ ) {
 
-			var img = new Image( _this.background_size.width*1.01 , _this.el_height ),
-				offset_x = ((_this.background_size.width) * pairs);
+			var imageWidth = _this.background_size.width + 2,
+				imageHeight = _this.el_height,
+				img = new Image( imageWidth , imageHeight ),
+				offset_x = ((_this.background_size.width) * pairs),
+				cssProps = {
+					'position'  : 'absolute',
+					'top'       : 0,
+					'transform' : pairs % 2 ? 'none' : 'scaleX(-1)',
+					'width'     : imageWidth,
+					'height'    : imageHeight
+				},
+				propertyName = i % 2 ? 'left' : 'right';
+
+			cssProps[propertyName] = image_offset - offset_x;
 
 			img.src = _this.image.src;
 			_this.$el.append(img);
 
-			if ( i % 2 ) {
-				$(img).css({
-					'position'  : 'absolute',
-					'top'       : 0,
-					'left'      : image_offset - offset_x,
-					'transform' : pairs % 2 ? 'none' : 'scaleX(-1)'
-				});
-
-				pairs++;
-
-			} else {
-				$(img).css({
-					'position'  : 'absolute',
-					'top'       : 0,
-					'right'     : image_offset - offset_x,
-					'transform' : pairs % 2 ? 'none' : 'scaleX(-1)'
-				})
-			}
+			$(img).css( cssProps );
 
 			_this.images.push(img);
 		}
@@ -129,7 +124,7 @@
 	/////////////////////
 
 	var mirrors = [];
-	var $d = $('div');
+	var $d = $('[data-discopaper]');
 
 	$d.each(function() {
 		mirrors.push( new DiscoPaper( $(this).get(0) ) );
